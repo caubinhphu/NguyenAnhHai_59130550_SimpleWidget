@@ -6,8 +6,16 @@ import java.util.ArrayList;
 public class Person {
   private String name;
   private String birthDate;
-  private String gender;
+  private boolean gender;
   private ArrayList<String> hobbies;
+
+  // constructor
+  public Person() {
+    this.name = "";
+    this.birthDate = "";
+    this.gender = true;
+    this.hobbies = new ArrayList<>();
+  }
 
   // setter
   public void setName(String name) {
@@ -18,7 +26,7 @@ public class Person {
     this.birthDate = birthDate;
   }
 
-  public void setGender(String gender) {
+  public void setGender(boolean gender) {
     this.gender = gender;
   }
 
@@ -36,7 +44,7 @@ public class Person {
   public String toString() {
     return name + '\n' +
             "Ngày sinh: " + birthDate + '\n' +
-            "Giới tính: " + gender + '\n' +
+            "Giới tính: " + (gender ? "Nam" : "Nữ") + '\n' +
             "Sở thích: " + TextUtils.join("; ", hobbies);
   }
 }
